@@ -46,7 +46,10 @@ app.get('/api/items', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-
+// ✅ Root Route
+app.get('/', (req, res) => {
+  res.send('Backend is running successfully');
+});
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
 });
